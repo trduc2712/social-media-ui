@@ -1,7 +1,17 @@
+import { Show, SignInButton, SignUpButton, UserButton } from '@clerk/react'
+
 export function HomePage() {
   return (
-    <main>
-      <h1>Social Media</h1>
-    </main>
+    <>
+      <header>
+        <Show when="signed-out">
+          <SignInButton />
+          <SignUpButton />
+        </Show>
+        <Show when="signed-in">
+          <UserButton />
+        </Show>
+      </header>
+    </>
   )
 }
