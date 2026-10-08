@@ -1,6 +1,8 @@
 import { createBrowserRouter } from 'react-router'
 
 import { SIGN_IN_PATH, SIGN_UP_PATH } from '@/constants/routes'
+import { RequireAuth } from '@/features/auth/require-auth'
+import { AppLayout } from '@/layouts/app-layout'
 import { RootLayout } from '@/layouts/root-layout'
 import { HomePage } from '@/pages/home-page'
 import { NotFoundPage } from '@/pages/not-found-page'
@@ -13,7 +15,15 @@ export const router = createBrowserRouter([
     element: <RootLayout />,
     errorElement: <RouteErrorPage />,
     children: [
-      { index: true, element: <HomePage /> },
+      {
+        element: <RequireAuth />,
+        children: [
+          {
+            element: <AppLayout />,
+            children: [{ index: true, element: <HomePage /> }],
+          },
+        ],
+      },
       { path: `${SIGN_IN_PATH}/*`, element: <SignInPage /> },
       { path: `${SIGN_UP_PATH}/*`, element: <SignUpPage /> },
       { path: '*', element: <NotFoundPage /> },

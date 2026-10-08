@@ -1,4 +1,14 @@
 {
+  "common": {
+    "loading": "Loading…",
+    "retry": "Try again"
+  },
+  "currentUser": {
+    "loadError": "We couldn't load your account."
+  },
+  "home": {
+    "title": "Home"
+  },
   "notFound": {
     "title": "Page not found",
     "backToHome": "Back to home"
