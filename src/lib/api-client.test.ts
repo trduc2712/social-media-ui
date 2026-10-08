@@ -1,7 +1,7 @@
 import { renderHook } from '@testing-library/react'
 import { afterEach, beforeEach, expect, test, vi } from 'vitest'
 
-import { ApiError, useApiFetch } from '@/lib/api-client'
+import { API_PREFIX, ApiError, useApiFetch } from '@/lib/api-client'
 
 const getToken = vi.fn<() => Promise<string | null>>()
 
@@ -28,7 +28,7 @@ test('sends the Clerk session token as a bearer token', async () => {
   const body = await result.current<{ id: string }>('/me')
 
   const [url, init] = fetchMock.mock.calls[0]
-  expect(String(url)).toMatch(/\/me$/)
+  expect(String(url).endsWith(`${API_PREFIX}/me`)).toBe(true)
   expect(new Headers(init?.headers).get('Authorization')).toBe(
     'Bearer session-token',
   )
