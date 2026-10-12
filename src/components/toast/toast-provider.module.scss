@@ -1,0 +1,25 @@
+.viewport {
+  position: fixed;
+  right: 0;
+  bottom: 0;
+  z-index: var(--z-toast);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  width: 100%;
+  max-width: var(--size-dialog);
+  padding: var(--space-4);
+  pointer-events: none;
+
+  &:empty {
+    display: none;
+  }
+}
+
+.toast {
+  border: var(--border-width-thin) solid var(--color-border-strong);
+  border-radius: var(--radius-md);
+  background: var(--color-surface-raised);
+  box-shadow: var(--shadow-md);
+  pointer-events: auto;
+}

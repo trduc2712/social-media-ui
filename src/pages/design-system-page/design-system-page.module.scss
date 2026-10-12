@@ -1,0 +1,32 @@
+@use '@/styles/mixins' as *;
+
+.layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  min-height: 100dvh;
+
+  @include up('md') {
+    grid-template-columns: var(--size-sidebar) minmax(0, 1fr);
+    align-items: start;
+  }
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-6);
+  width: 100%;
+  max-width: var(--content-max-width);
+  min-width: 0;
+  padding: var(--space-5) var(--space-4);
+
+  @include up('md') {
+    padding: var(--space-6);
+  }
+}
+
+.title {
+  border-radius: var(--radius-sm);
+
+  @include focus-ring;
+}

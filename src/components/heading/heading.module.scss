@@ -1,0 +1,22 @@
+$sizes: sm, md, lg, xl, 2xl, 3xl;
+
+.root {
+  font-weight: var(--font-weight-semibold);
+  line-height: var(--line-height-tight);
+}
+
+@each $align in start, center, end {
+  .align-#{$align} {
+    text-align: $align;
+  }
+}
+
+.muted {
+  color: var(--color-text-muted);
+}
+
+@each $size in $sizes {
+  .size-#{$size} {
+    font-size: var(--font-size-#{$size});
+  }
+}

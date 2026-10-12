@@ -1,0 +1,54 @@
+:root {
+  color-scheme: light dark;
+
+  --color-bg: light-dark(var(--neutral-0), var(--neutral-900));
+  --color-surface: light-dark(var(--neutral-50), var(--neutral-800));
+  --color-surface-raised: light-dark(var(--neutral-100), var(--neutral-700));
+  --color-overlay: rgb(12 12 14 / 60%);
+
+  --color-text: light-dark(var(--neutral-900), var(--neutral-50));
+  --color-text-muted: light-dark(var(--neutral-500), var(--neutral-300));
+
+  --color-border: light-dark(var(--neutral-200), var(--neutral-600));
+  --color-border-strong: light-dark(var(--neutral-500), var(--neutral-400));
+
+  --color-primary: light-dark(var(--purple-500), var(--purple-400));
+  --color-primary-hover: light-dark(var(--purple-600), var(--purple-300));
+  --color-primary-active: light-dark(var(--purple-700), var(--purple-200));
+  --color-primary-text: light-dark(var(--purple-500), var(--purple-300));
+  --color-primary-subtle: light-dark(var(--purple-50), var(--purple-900));
+  --color-primary-border: light-dark(var(--purple-100), var(--purple-800));
+  --color-text-on-primary: light-dark(var(--neutral-0), var(--neutral-900));
+
+  --color-danger: light-dark(var(--red-500), var(--red-400));
+  --color-danger-hover: light-dark(var(--red-600), var(--red-500));
+  --color-danger-active: light-dark(var(--red-600), var(--red-600));
+  --color-danger-text: light-dark(var(--red-500), var(--red-300));
+  --color-danger-subtle: light-dark(var(--red-50), var(--red-900));
+  --color-text-on-danger: light-dark(var(--neutral-0), var(--neutral-0));
+
+  --color-success: light-dark(var(--green-500), var(--green-500));
+  --color-text-on-success: light-dark(var(--neutral-0), var(--neutral-0));
+  --color-success-text: light-dark(var(--green-500), var(--green-300));
+  --color-success-subtle: light-dark(var(--green-50), var(--green-900));
+
+  --color-warning: light-dark(var(--amber-500), var(--amber-500));
+  --color-text-on-warning: light-dark(var(--neutral-0), var(--neutral-0));
+  --color-warning-text: light-dark(var(--amber-500), var(--amber-300));
+  --color-warning-subtle: light-dark(var(--amber-50), var(--amber-900));
+
+  --color-info: light-dark(var(--blue-600), var(--blue-600));
+  --color-text-on-info: light-dark(var(--neutral-0), var(--neutral-0));
+  --color-info-text: light-dark(var(--blue-600), var(--blue-300));
+  --color-info-subtle: light-dark(var(--blue-50), var(--blue-900));
+
+  --color-focus-ring: light-dark(var(--blue-600), var(--blue-400));
+}
+
+:root[data-theme='light'] {
+  color-scheme: light;
+}
+
+:root[data-theme='dark'] {
+  color-scheme: dark;
+}
