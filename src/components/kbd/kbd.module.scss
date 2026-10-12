@@ -1,0 +1,14 @@
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: var(--size-badge-min);
+  padding: 0 var(--space-1);
+  border: var(--border-width-thin) solid var(--color-border-strong);
+  border-bottom-width: var(--border-width-medium);
+  border-radius: var(--radius-sm);
+  background: var(--color-surface);
+  color: var(--color-text);
+  font-size: var(--font-size-xs);
+  line-height: var(--line-height-normal);
+}

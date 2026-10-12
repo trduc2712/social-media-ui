@@ -1,0 +1,63 @@
+@use '@/styles/mixins' as *;
+
+.root {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-3);
+  cursor: pointer;
+}
+
+.input {
+  @include visually-hidden;
+}
+
+.track {
+  display: inline-flex;
+  flex-shrink: 0;
+  align-items: center;
+  width: var(--size-switch-width);
+  padding: var(--border-width-medium);
+  border: var(--border-width-thin) solid var(--color-border-strong);
+  border-radius: var(--radius-full);
+  background: var(--color-surface-raised);
+  transition: background-color var(--duration-fast) var(--ease-standard);
+}
+
+.thumb {
+  width: var(--size-toggle);
+  height: var(--size-toggle);
+  border-radius: var(--radius-full);
+  background: var(--color-border-strong);
+  transition: transform var(--duration-fast) var(--ease-standard);
+}
+
+.input:checked + .track {
+  border-color: var(--color-primary);
+  background: var(--color-primary);
+
+  .thumb {
+    transform: translateX(
+      calc(
+        var(--size-switch-width) - var(--size-toggle) -
+          (var(--border-width-medium) + var(--border-width-thin)) * 2
+      )
+    );
+    background: var(--color-text-on-primary);
+  }
+}
+
+.input:focus-visible + .track {
+  outline: var(--focus-ring-width) solid var(--color-focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.input:disabled + .track,
+.input:disabled ~ .label {
+  cursor: not-allowed;
+  opacity: var(--opacity-disabled);
+}
+
+.end {
+  flex-direction: row-reverse;
+  justify-content: space-between;
+}

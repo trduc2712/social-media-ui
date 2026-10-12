@@ -1,4 +1,5 @@
 import '@fontsource-variable/inter'
+import '@fontsource-variable/jetbrains-mono'
 import '@/styles/main.scss'
 import '@/i18n/i18n'
 
@@ -8,6 +9,8 @@ import { StrictMode } from 'react'
 import { createRoot } from 'react-dom/client'
 import { RouterProvider } from 'react-router/dom'
 
+import { ToastProvider } from '@/components/toast/toast-provider'
+import { clerkAppearance } from '@/config/clerk-appearance'
 import { env } from '@/config/env'
 import { SIGN_IN_PATH, SIGN_UP_PATH } from '@/constants/routes'
 import { queryClient } from '@/lib/query-client'
@@ -21,12 +24,12 @@ createRoot(document.getElementById('root')!).render(
       signUpUrl={SIGN_UP_PATH}
       routerPush={(to) => router.navigate(to)}
       routerReplace={(to) => router.navigate(to, { replace: true })}
-      appearance={{
-        options: { unsafe_disableDevelopmentModeWarnings: true },
-      }}
+      appearance={clerkAppearance}
     >
       <QueryClientProvider client={queryClient}>
-        <RouterProvider router={router} />
+        <ToastProvider>
+          <RouterProvider router={router} />
+        </ToastProvider>
       </QueryClientProvider>
     </ClerkProvider>
   </StrictMode>,

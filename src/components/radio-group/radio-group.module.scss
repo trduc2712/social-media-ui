@@ -1,0 +1,83 @@
+@use '@/styles/mixins' as *;
+
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  min-width: 0;
+  padding: 0;
+  border: 0;
+}
+
+.legend {
+  padding: 0;
+  font-size: var(--font-size-sm);
+  font-weight: var(--font-weight-medium);
+}
+
+.options {
+  display: flex;
+  gap: var(--space-2) var(--space-5);
+}
+
+.vertical {
+  flex-direction: column;
+}
+
+.horizontal {
+  flex-flow: row wrap;
+}
+
+.item {
+  display: inline-flex;
+  flex-direction: column;
+}
+
+.option {
+  display: inline-flex;
+  align-items: flex-start;
+  gap: var(--space-2);
+  cursor: pointer;
+}
+
+.input {
+  @include visually-hidden;
+}
+
+.circle {
+  flex-shrink: 0;
+  width: var(--size-toggle);
+  height: var(--size-toggle);
+  margin-top: calc(
+    (var(--font-size-md) * var(--line-height-normal) - var(--size-toggle)) / 2
+  );
+  border: var(--border-width-thin) solid var(--color-border-strong);
+  border-radius: var(--radius-full);
+  background: var(--color-bg);
+}
+
+.input:checked + .circle {
+  border: calc(var(--size-toggle) / 3) solid var(--color-primary);
+}
+
+.input:focus-visible + .circle {
+  outline: var(--focus-ring-width) solid var(--color-focus-ring);
+  outline-offset: var(--focus-ring-offset);
+}
+
+.input:disabled + .circle,
+.input:disabled ~ .text {
+  cursor: not-allowed;
+  opacity: var(--opacity-disabled);
+}
+
+.hint {
+  padding-inline-start: calc(var(--size-toggle) + var(--space-2));
+  color: var(--color-text-muted);
+  font-size: var(--font-size-sm);
+}
+
+.error {
+  color: var(--color-danger-text);
+  font-size: var(--font-size-sm);
+}

@@ -1,7 +1,10 @@
 {
   "common": {
     "loading": "Loading…",
-    "retry": "Try again"
+    "retry": "Try again",
+    "opensInNewTab": "(opens in new tab)",
+    "dismiss": "Dismiss",
+    "close": "Close"
   },
   "currentUser": {
     "loadError": "We couldn't load your account."
@@ -13,5 +16,42 @@
   "routeError": {
     "title": "Something went wrong",
     "description": "An unexpected error occurred. Please try again."
+  },
+  "theme": {
+    "label": "Theme",
+    "system": "System",
+    "light": "Light",
+    "dark": "Dark"
+  },
+  "badge": {
+    "overflow": "{{max}}+"
+  },
+  "combobox": {
+    "noResults": "No results"
+  },
+  "avatar": {
+    "status": {
+      "online": "Online",
+      "busy": "Busy",
+      "offline": "Offline"
+    }
+  },
+  "tag": {
+    "remove": "Remove {{label}}"
+  },
+  "pagination": {
+    "label": "Pagination",
+    "previous": "Previous page",
+    "next": "Next page",
+    "page": "Page {{page}}"
+  },
+  "breadcrumb": {
+    "label": "Breadcrumb"
+  },
+  "toast": {
+    "label": "Notifications"
+  },
+  "field": {
+    "required": "required"
   }
 }

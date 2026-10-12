@@ -1,0 +1,63 @@
+.root {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  min-width: 0;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  gap: var(--space-3);
+  font-size: var(--font-size-sm);
+}
+
+.label {
+  font-weight: var(--font-weight-medium);
+}
+
+.value {
+  color: var(--color-text-muted);
+}
+
+.track {
+  height: var(--size-progress);
+  overflow: hidden;
+  border: var(--border-width-thin) solid var(--color-border-strong);
+  border-radius: var(--radius-full);
+  background: var(--color-surface-raised);
+}
+
+.fill {
+  height: 100%;
+  border-radius: var(--radius-full);
+  background: var(--progress-fill);
+  transition: width var(--duration-normal) var(--ease-standard);
+}
+
+.primary {
+  --progress-fill: var(--color-primary-text);
+}
+
+.success {
+  --progress-fill: var(--color-success-text);
+}
+
+.danger {
+  --progress-fill: var(--color-danger-text);
+}
+
+.indeterminate {
+  width: 50%;
+  animation: slide var(--duration-progress) var(--ease-standard) infinite;
+}
+
+@keyframes slide {
+  from {
+    transform: translateX(-100%);
+  }
+
+  to {
+    transform: translateX(200%);
+  }
+}

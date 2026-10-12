@@ -1,0 +1,55 @@
+$tones: primary, info, success, warning, danger;
+
+.root {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-1);
+  min-width: var(--size-badge-min);
+  border: var(--border-width-thin) solid transparent;
+  border-radius: var(--radius-full);
+  font-weight: var(--font-weight-medium);
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.sm {
+  padding: var(--space-1) var(--space-2);
+  font-size: var(--font-size-xs);
+}
+
+.md {
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--font-size-sm);
+}
+
+.tone-neutral {
+  --badge-fill: var(--color-text);
+  --badge-on-fill: var(--color-bg);
+  --badge-text: var(--color-text);
+  --badge-subtle: var(--color-surface-raised);
+}
+
+@each $tone in $tones {
+  .tone-#{$tone} {
+    --badge-fill: var(--color-#{$tone});
+    --badge-on-fill: var(--color-text-on-#{$tone});
+    --badge-text: var(--color-#{$tone}-text);
+    --badge-subtle: var(--color-#{$tone}-subtle);
+  }
+}
+
+.subtle {
+  background: var(--badge-subtle);
+  color: var(--badge-text);
+}
+
+.solid {
+  background: var(--badge-fill);
+  color: var(--badge-on-fill);
+}
+
+.outline {
+  border-color: currentColor;
+  color: var(--badge-text);
+}
