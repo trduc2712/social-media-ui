@@ -4,7 +4,7 @@ import { RouterProvider } from 'react-router/dom'
 import { expect, test, vi } from 'vitest'
 
 import { i18n } from '@/i18n/i18n'
-import { RouteErrorPage } from '@/pages/route-error-page'
+import { RouteErrorPage } from '@/pages/route-error-page/route-error-page'
 
 function BrokenPage(): never {
   throw new Error('boom')

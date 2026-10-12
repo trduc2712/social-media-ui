@@ -3,13 +3,17 @@ import { Link } from 'react-router'
 
 import { HOME_PATH } from '@/constants/routes'
 
+import styles from './not-found-page.module.scss'
+
 export function NotFoundPage() {
   const { t } = useTranslation()
 
   return (
-    <main>
+    <main className={styles.page}>
       <h1>{t('notFound.title')}</h1>
-      <Link to={HOME_PATH}>{t('notFound.backToHome')}</Link>
+      <Link className={styles.link} to={HOME_PATH}>
+        {t('notFound.backToHome')}
+      </Link>
     </main>
   )
 }
