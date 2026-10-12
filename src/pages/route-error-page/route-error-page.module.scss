@@ -1,0 +1,14 @@
+@use '@/styles/mixins' as *;
+
+.page {
+  @include center-screen;
+
+  gap: var(--space-4);
+  text-align: center;
+}
+
+.link {
+  color: var(--color-primary);
+
+  @include focus-ring;
+}

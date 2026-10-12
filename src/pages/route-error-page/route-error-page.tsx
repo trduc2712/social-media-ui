@@ -3,14 +3,18 @@ import { Link } from 'react-router'
 
 import { HOME_PATH } from '@/constants/routes'
 
+import styles from './route-error-page.module.scss'
+
 export function RouteErrorPage() {
   const { t } = useTranslation()
 
   return (
-    <main>
+    <main className={styles.page}>
       <h1>{t('routeError.title')}</h1>
       <p>{t('routeError.description')}</p>
-      <Link to={HOME_PATH}>{t('notFound.backToHome')}</Link>
+      <Link className={styles.link} to={HOME_PATH}>
+        {t('notFound.backToHome')}
+      </Link>
     </main>
   )
 }
