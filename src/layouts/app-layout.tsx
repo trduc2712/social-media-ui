@@ -1,12 +1,11 @@
-import { UserButton } from '@clerk/react'
 import { Outlet } from 'react-router'
+
+import { Header } from '@/components/header/header'
 
 export function AppLayout() {
   return (
     <>
-      <header>
-        <UserButton />
-      </header>
+      <Header />
       <main>
         <Outlet />
       </main>
