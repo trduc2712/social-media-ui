@@ -1,6 +1,10 @@
 import { createBrowserRouter } from 'react-router'
 
-import { SIGN_IN_PATH, SIGN_UP_PATH } from '@/constants/routes'
+import {
+  DESIGN_SYSTEM_PATH,
+  SIGN_IN_PATH,
+  SIGN_UP_PATH,
+} from '@/constants/routes'
 import { RequireAuth } from '@/features/auth/require-auth'
 import { AppLayout } from '@/layouts/app-layout'
 import { RootLayout } from '@/layouts/root-layout'
@@ -26,6 +30,18 @@ export const router = createBrowserRouter([
       },
       { path: `${SIGN_IN_PATH}/*`, element: <SignInPage /> },
       { path: `${SIGN_UP_PATH}/*`, element: <SignUpPage /> },
+      ...(import.meta.env.DEV
+        ? [
+            {
+              path: `${DESIGN_SYSTEM_PATH}/:entryId?`,
+              lazy: async () => {
+                const { DesignSystemPage } =
+                  await import('@/pages/design-system-page/design-system-page')
+                return { Component: DesignSystemPage }
+              },
+            },
+          ]
+        : []),
       { path: '*', element: <NotFoundPage /> },
     ],
   },
