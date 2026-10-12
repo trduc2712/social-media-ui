@@ -1,0 +1,85 @@
+:root {
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+  --space-8: 4rem;
+
+  --border-width-thin: 1px;
+  --border-width-medium: 2px;
+  --border-width-thick: 3px;
+
+  --focus-ring-width: var(--border-width-medium);
+  --focus-ring-offset: 2px;
+
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-full: 9999px;
+
+  --shadow-sm: 0 1px 2px rgb(12 12 14 / 12%);
+  --shadow-md: 0 4px 12px rgb(12 12 14 / 16%);
+
+  --z-header: 100;
+  --z-overlay: 200;
+  --z-toast: 300;
+
+  --duration-fast: 100ms;
+  --duration-normal: 200ms;
+  --duration-spin: 800ms;
+  --duration-pulse: 1500ms;
+  --duration-progress: 1500ms;
+  --duration-instant: 0.01ms;
+  --ease-standard: cubic-bezier(0.2, 0, 0, 1);
+
+  --size-control-sm: 1.75rem;
+  --size-control-md: 2.25rem;
+  --size-control-lg: 2.75rem;
+
+  --size-icon-sm: 1rem;
+  --size-icon-md: 1.25rem;
+  --size-icon-lg: 1.5rem;
+  --size-icon-xl: 2.5rem;
+  --icon-stroke-width: 2;
+
+  --size-spinner-sm: 1rem;
+  --size-spinner-md: 1.5rem;
+  --size-spinner-lg: 2.5rem;
+
+  --size-avatar-xs: 1.5rem;
+  --size-avatar-sm: 2rem;
+  --size-avatar-md: 2.5rem;
+  --size-avatar-lg: 3.5rem;
+  --size-avatar-xl: 5rem;
+  --avatar-font-scale: 0.4;
+
+  --size-badge-min: 1.5rem;
+  --size-skeleton-text: 1em;
+
+  --size-tile-min: 11rem;
+  --size-container-sm: 40rem;
+  --size-container-md: 56rem;
+  --size-container-lg: 72rem;
+
+  --size-toggle: 1.25rem;
+  --size-switch-width: 2.5rem;
+  --size-status: 0.75rem;
+  --size-progress: 0.5rem;
+  --size-dialog: 32rem;
+  --size-tooltip-max: 16rem;
+  --size-menu-min: 12rem;
+
+  --size-measure-sm: 16rem;
+  --size-measure-md: 28rem;
+  --size-sidebar: 17rem;
+  --size-popup-max: 18rem;
+
+  --opacity-disabled: 0.5;
+  --opacity-pulse: 0.5;
+
+  --header-height: 3.5rem;
+  --content-max-width: 72rem;
+}
