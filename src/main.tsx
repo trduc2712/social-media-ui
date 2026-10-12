@@ -21,6 +21,9 @@ createRoot(document.getElementById('root')!).render(
       signUpUrl={SIGN_UP_PATH}
       routerPush={(to) => router.navigate(to)}
       routerReplace={(to) => router.navigate(to, { replace: true })}
+      appearance={{
+        options: { unsafe_disableDevelopmentModeWarnings: true },
+      }}
     >
       <QueryClientProvider client={queryClient}>
         <RouterProvider router={router} />
